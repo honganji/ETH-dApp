@@ -18,14 +18,14 @@
 
 ## • Links
 
-[![production](https://img.shields.io/badge/production-v1-blue)](https://eth-dapp-three.vercel.app/)
+[Deployed here](https://eth-dapp-three.vercel.app/)
+
+[![Frontend](assets/frontend.png)](https://eth-dapp-three.vercel.app/)
 
 
 ## • Overview
 
 This is dapp that you can send message and wave to the board. Also, if you're lucky, you can receive token(testnet token) from this contract.
-
-This app is deployed to [here](https://eth-dapp-three.vercel.app/).
 
 ## • Launch
 
