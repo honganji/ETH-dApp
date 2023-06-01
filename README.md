@@ -55,5 +55,4 @@ const contractAddress = "YOUR_CONTRACT_ADDRESS";
 
 5. replace the json file in `packages/client/src/utils/Web3Mint.json` with the content of the json file in `packages/contract/artifacts/contracts/Web3Mint.sol/Web3Mint.json`.
 
-
 6. Finally, run `yarn client start` in terminal and see how it works!

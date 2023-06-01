@@ -1,39 +1,39 @@
-const hre = require('hardhat');
-const { expect } = require('chai');
+const hre = require("hardhat");
+const { expect } = require("chai");
 
-describe('Wave Contract', function () {
-  it('test if wave and token are sent', async function () {
+describe("Wave Contract", function () {
+  it("test if wave and token are sent", async function () {
     const waveContractFactory = await hre.ethers.getContractFactory(
-      'WavePortal',
+      "WavePortal"
     );
     /*
      * デプロイする際0.1ETHをコントラクトに提供する
      */
     const waveContract = await waveContractFactory.deploy({
-      value: hre.ethers.utils.parseEther('0.1'),
+      value: hre.ethers.utils.parseEther("0.1"),
     });
     await waveContract.deployed();
     /*
      * コントラクトの残高を取得（0.1ETH）
      */
     const contractBalanceBefore = hre.ethers.utils.formatEther(
-      await hre.ethers.provider.getBalance(waveContract.address),
+      await hre.ethers.provider.getBalance(waveContract.address)
     );
 
     /*
      * 2回 waves を送るシミュレーションを行う
      */
-    const waveTxn = await waveContract.wave('This is wave #1');
+    const waveTxn = await waveContract.wave("This is wave #1");
     await waveTxn.wait();
 
-    const waveTxn2 = await waveContract.wave('This is wave #2');
+    const waveTxn2 = await waveContract.wave("This is wave #2");
     await waveTxn2.wait();
 
     /*
      * コントラクトの残高を取得し、Waveを取得した後の結果を出力
      */
     const contractBalanceAfter = hre.ethers.utils.formatEther(
-      await hre.ethers.provider.getBalance(waveContract.address),
+      await hre.ethers.provider.getBalance(waveContract.address)
     );
 
     /*
@@ -50,14 +50,14 @@ describe('Wave Contract', function () {
     /*
      *メッセージの送信をテスト
      */
-    expect(allWaves[0].message).to.equal('This is wave #1');
-    expect(allWaves[1].message).to.equal('This is wave #2');
+    expect(allWaves[0].message).to.equal("This is wave #1");
+    expect(allWaves[1].message).to.equal("This is wave #2");
 
     /*
      *コントラクトのトークン残高がwave時の勝負による減少に連動しているかテスト
      */
     expect(parseFloat(contractBalanceAfter)).to.equal(
-      contractBalanceBefore - cost,
+      contractBalanceBefore - cost
     );
   });
 });
