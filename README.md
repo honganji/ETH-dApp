@@ -16,16 +16,17 @@
 
 <br/>
 
+## • Overview
+
+This project is made following [this instructions](https://app.unchain.tech/learn/ETH-dApp/). Engineer cmmunity `UNCHAIN` is one of the best one to learn blockchain development.
+
+This is dapp that you can send message and wave to the board. Also, if you're lucky, you can receive token(testnet token) from this contract.
+
 ## • Links
 
 [Deployed here](https://eth-dapp-three.vercel.app/)
 
 [![Frontend](assets/frontend.png)](https://eth-dapp-three.vercel.app/)
-
-
-## • Overview
-
-This is dapp that you can send message and wave to the board. Also, if you're lucky, you can receive token(testnet token) from this contract.
 
 ## • Launch
 
